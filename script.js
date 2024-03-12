@@ -7,6 +7,16 @@ const bookAuthor = document.querySelector('#Author');
 const bookPages = document.querySelector('#Pages');
 const bookRead = document.querySelector('#Read');
 const section = document.querySelector('section');
+const warning = document.querySelector('.warning');
+let checked = false;
+
+bookRead.addEventListener('change', function() {
+  if (this.checked) {
+    checked = true;
+  } else {
+    checked = false;
+  }
+});
 
 let books = [];
 function Book(name, author, pages, read) {
@@ -18,6 +28,7 @@ function Book(name, author, pages, read) {
 
 
 addButton.addEventListener('click', function(){
+    warning.style.display = 'none';
     modal.style.display = 'flex';
 })
 
@@ -26,11 +37,21 @@ closer.addEventListener('click', function(){
 })
 submit.addEventListener ('click', function() {
 
-    var tempbook = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.value);
+    let tempbook = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.value);
     console.log(tempbook);
     books.push(tempbook);
     console.log(books);
-    display(tempbook);
+    
+    if(tempbook.bookName !== '' && tempbook.bookAuthor !== ''&& tempbook.bookPages !== '')
+    {
+        display(tempbook);
+        clearInput();
+        modal.style.display = 'none';
+    }
+    else {
+        books.pop();
+        warning.style.display = 'block';
+    }
     clearInput();
 })
 
@@ -55,25 +76,28 @@ function display(obj) {
     para1.textContent = "Author Name:" + obj.bookAuthor;
     para2.textContent = "Total Pages:" + obj.bookPages;
     console.log(obj.bookRead);
-    if(Boolean(obj.bookRead))
+    if(checked)
     {
-        button1.textContent = "Not - Read";
+        button1.textContent = "Read";
+        obj.bookRead = true;
     }
     else {
-        button1.textContent = "Read";
+        button1.textContent = "Not - Read";
+        obj.bookRead = false;
     }
     button2.textContent = "Delete";
+    button2.classList.add('remove');
     deleteButton(button2);
 
     button1.addEventListener('click', function() {
-        if(Boolean(obj.bookRead))
+        if(obj.bookRead)
         {
             obj.bookRead = false;
-            button1.textContent = "Read";
+            button1.textContent = "Not - Read";
         }
         else {
             obj.bookRead = true;
-            button1.textContent = "Not - Read";
+            button1.textContent = " Read";
         }
     })
     

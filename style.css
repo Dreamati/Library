@@ -58,7 +58,6 @@ section button {
     font-weight: 700;
 }
 section button:hover {
-    background-color: var(--color-hover);
     font-size: medium;
 }
 .remove {
@@ -135,4 +134,9 @@ input {
     background-color: white;
     font-size: medium;
     
+}
+.warning {
+    color: red;
+    font-size: 13px;
+    display: none;
 }

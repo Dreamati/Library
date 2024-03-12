@@ -13,42 +13,24 @@
         <button class="addNew">+</button>
     </header>
     <section class="bookList">
-        <div class="bookBox">
-            <h2 class="bookName">Book Name</h2>
-            <p class="author">Author</p>
-            <p class="pages">Pages</p>
-            <button class="read">Read</button>
-            <button class="remove">Remove</button>
-        </div>
-        <div class="bookBox">
-            <h2 class="bookName">Book Name</h2>
-            <p class="author">Author</p>
-            <p class="pages">Pages</p>
-            <button class="read">Read</button>
-            <button class="remove">Remove</button>
-        </div>
-        <div class="bookBox">
-            <h2 class="bookName">Book Name</h2>
-            <p class="author">Author</p>
-            <p class="pages">Pages</p>
-            <button class="read">Read</button>
-            <button class="remove">Remove</button>
-        </div>
+        
+        
     </section>
     <div class="modal">
         <form action="">
             <button class="close" id="closer">X</button>
             <h3>Add New Book </h3>
-            <label for="Title"><p>Book Title:</p> <input type="text" id="Title" required></label>
+            <label for="Title"><p>Book Title *:</p> <input type="text" id="Title" required></label>
             
-            <label for="Author"><p>Author:</p> <input type="text" id="Author" required></label>
+            <label for="Author"><p>Author *:</p> <input type="text" id="Author" required></label>
             
-            <label for="Pages"><p>Total Pages:</p> <input type="number" id="Pages" required></label>
+            <label for="Pages"><p>Total Pages *:</p> <input type="number" id="Pages" required></label>
             
             
-            <label for="Read"><p>Have you Read?:</p> <input type="checkbox" id="Read"></label>
+            <label for="Read"><p>Have you Read?:</p> <input type="checkbox" id="Read" value="true"></label>
             
             <button type="button" id="Submit">Submit</button> 
+            <p class="warning">Please Fill the Requird(*) Fields</p>
         </form>
     </div>
 </body>
