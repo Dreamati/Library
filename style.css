@@ -34,7 +34,7 @@ section {
 
     background-color: var(--color-theme);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 10px;
     align-items: center;
     justify-items: center;
@@ -61,7 +61,12 @@ section button:hover {
     background-color: var(--color-hover);
     font-size: medium;
 }
-
+.remove {
+    background-color: var(--color-hover);
+}
+.remove:hover {
+    background-color: white;
+}
 .modal {
 
     position: absolute;
