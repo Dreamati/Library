@@ -87,7 +87,7 @@ function display(obj) {
     }
     button2.textContent = "Delete";
     button2.classList.add('remove');
-    deleteButton(button2);
+    deleteButton(button2, obj);
 
     button1.addEventListener('click', function() {
         if(obj.bookRead)
@@ -107,10 +107,15 @@ function display(obj) {
     div.appendChild(para2);
     div.appendChild(button1);
     div.appendChild(button2);
+
+    
 }
 
-function deleteButton(obj2) {
+function deleteButton(obj2, obj) {
+    
     obj2.addEventListener('click', function(){
+        console.log(books.indexOf(obj));
+        books.splice(books.indexOf(obj), 1);
         obj2.parentNode.remove();
     })
 }
