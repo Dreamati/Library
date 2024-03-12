@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Library</h1>
+        <button class="addNew">+</button>
+    </header>
+    <section class="bookList">
+        <div class="bookBox">
+            <h2 class="bookName">Book Name</h2>
+            <p class="author">Author</p>
+            <p class="pages">Pages</p>
+            <button class="read">Read</button>
+            <button class="remove">Remove</button>
+        </div>
+        <div class="bookBox">
+            <h2 class="bookName">Book Name</h2>
+            <p class="author">Author</p>
+            <p class="pages">Pages</p>
+            <button class="read">Read</button>
+            <button class="remove">Remove</button>
+        </div>
+        <div class="bookBox">
+            <h2 class="bookName">Book Name</h2>
+            <p class="author">Author</p>
+            <p class="pages">Pages</p>
+            <button class="read">Read</button>
+            <button class="remove">Remove</button>
+        </div>
+    </section>
+    <div class="modal">
+        <form action="">
+            <button class="close" id="closer">X</button>
+            <h3>Add New Book </h3>
+            <label for="Title"><p>Book Title:</p> <input type="text" id="Title" required></label>
+            
+            <label for="Author"><p>Author:</p> <input type="text" id="Author" required></label>
+            
+            <label for="Pages"><p>Total Pages:</p> <input type="number" id="Pages" required></label>
+            
+            
+            <label for="Read"><p>Have you Read?:</p> <input type="checkbox"></label>
+            
+            <button type="button">Submit</button> 
+        </form>
+    </div>
+</body>
+</html>
