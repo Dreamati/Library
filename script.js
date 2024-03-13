@@ -44,7 +44,7 @@ submit.addEventListener ('click', function() {
     
     if(tempbook.bookName !== '' && tempbook.bookAuthor !== ''&& tempbook.bookPages !== '')
     {
-        display(tempbook);
+        tempbook.display();
         clearInput();
         modal.style.display = 'none';
     }
@@ -62,7 +62,7 @@ function clearInput() {
     bookRead.value = '';
 }
 
-function display(obj) {
+Book.prototype.display = function () {
     let div = document.createElement('div');
     div.classList.add("bookBox");
 
@@ -72,31 +72,31 @@ function display(obj) {
     let button1 = document.createElement('button');
     let button2 = document.createElement('button');
 
-    h2.textContent = `${obj.bookName}`;
-    para1.textContent = "Author Name : " + obj.bookAuthor;
-    para2.textContent = "Total Pages : " + obj.bookPages;
-    console.log(obj.bookRead);
+    h2.textContent = `${this.bookName}`;
+    para1.textContent = "Author Name : " + this.bookAuthor;
+    para2.textContent = "Total Pages : " + this.bookPages;
+    console.log(this.bookRead);
     if(checked)
     {
         button1.textContent = "Read";
-        obj.bookRead = true;
+        this.bookRead = true;
     }
     else {
         button1.textContent = "Not - Read";
-        obj.bookRead = false;
+        this.bookRead = false;
     }
     button2.textContent = "Delete";
     button2.classList.add('remove');
-    deleteButton(button2, obj);
+    this.deleteButton(button2);
 
     button1.addEventListener('click', function() {
-        if(obj.bookRead)
+        if(this.bookRead)
         {
-            obj.bookRead = false;
+            this.bookRead = false;
             button1.textContent = "Not - Read";
         }
         else {
-            obj.bookRead = true;
+            this.bookRead = true;
             button1.textContent = " Read";
         }
     })
@@ -111,11 +111,11 @@ function display(obj) {
     
 }
 
-function deleteButton(obj2, obj) {
+Book.prototype.deleteButton = function(obj2) {
     
     obj2.addEventListener('click', function(){
-        console.log(books.indexOf(obj));
-        books.splice(books.indexOf(obj), 1);
+        console.log(books.indexOf(this));
+        books.splice(books.indexOf(this), 1);
         obj2.parentNode.remove();
     })
 }
