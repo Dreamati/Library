@@ -1,7 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
-    --color-theme: #fbfdff69;
+    --color-theme: #f6f0fc69;
     --color1: #f4fffd73;
     --color-hover: rgb(253, 163, 163);
     min-height: 100vh;
@@ -31,7 +31,7 @@ header button:hover {
 
 section {
     flex: 8;
-
+    margin-top: 5%;
     background-color: var(--color-theme);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

@@ -73,8 +73,8 @@ function display(obj) {
     let button2 = document.createElement('button');
 
     h2.textContent = `${obj.bookName}`;
-    para1.textContent = "Author Name:" + obj.bookAuthor;
-    para2.textContent = "Total Pages:" + obj.bookPages;
+    para1.textContent = "Author Name : " + obj.bookAuthor;
+    para2.textContent = "Total Pages : " + obj.bookPages;
     console.log(obj.bookRead);
     if(checked)
     {
